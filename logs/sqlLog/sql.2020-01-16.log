@@ -1,0 +1,8 @@
+[2020-01-16T09:54:37.533] [INFO] sql - Executing (default): CREATE TABLE IF NOT EXISTS `endpoints` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `ip` VARCHAR(255), `port` INTEGER, `email` VARCHAR(255) UNIQUE, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `deleted_at` DATETIME);
+[2020-01-16T09:54:37.538] [INFO] sql - Executing (default): PRAGMA INDEX_LIST(`endpoints`)
+[2020-01-16T09:54:37.539] [INFO] sql - Executing (default): PRAGMA INDEX_INFO(`sqlite_autoindex_endpoints_1`)
+[2020-01-16T09:54:37.541] [INFO] sql - Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `email` VARCHAR(255) UNIQUE, `password` VARCHAR(255), `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `deleted_at` DATETIME);
+[2020-01-16T09:54:37.542] [INFO] sql - Executing (default): PRAGMA INDEX_LIST(`users`)
+[2020-01-16T09:54:37.544] [INFO] sql - Executing (default): PRAGMA INDEX_INFO(`sqlite_autoindex_users_1`)
+[2020-01-16T09:55:05.696] [INFO] sql - Executing (default): INSERT INTO `users` (`id`,`email`,`password`,`created_at`,`updated_at`) VALUES (NULL,$1,$2,$3,$4);
+[2020-01-16T09:55:12.967] [INFO] sql - Executing (default): SELECT `id`, `email`, `password`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt`, `deleted_at` AS `deletedAt` FROM `users` AS `User` WHERE (`User`.`deleted_at` IS NULL AND `User`.`email` = 'hu@qq.com');
